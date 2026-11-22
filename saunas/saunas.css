@@ -119,3 +119,30 @@ body.spa-hub .catalog-morning p{display:flex;flex-wrap:wrap;justify-content:spac
 body.spa-hub .catalog-morning strong{font-weight:500;font-variant-numeric:tabular-nums}
 body.spa-hub .catalog-morning small{display:block;font-size:13px;line-height:1.5;color:var(--muted);margin-top:4px}
 @media(max-width:700px){body.spa-hub .morning-banner{display:block;padding-block:20px}body.spa-hub .morning-banner p{margin-top:8px;font-size:14px}body.spa-hub .morning-banner strong{font-size:17px}body.spa-hub .price>strong{font-size:30px}}
+
+/* Each pair shares content rows, including the price and both destination links. */
+@media(min-width:601px){
+ body.spa-hub .spa-grid{row-gap:0}
+ body.spa-hub .spa-card{display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:subgrid;grid-row:span 8;row-gap:0}
+ body.spa-hub .spa-card:nth-child(n+3){margin-top:48px}
+ body.spa-hub .card-media,body.spa-hub .wild-card .card-media,body.spa-hub .wide .card-media{grid-row:1;aspect-ratio:1.5;grid-template-rows:minmax(0,1fr);align-items:stretch;min-height:0}
+ body.spa-hub .card-media button{height:100%;width:fit-content;max-width:100%;justify-self:center}
+ body.spa-hub .card-media button:first-child{justify-self:start}
+ body.spa-hub .card-media button:last-child{justify-self:end}
+ body.spa-hub .card-media img{height:100%;width:auto;object-fit:contain}
+ body.spa-hub .card-media .media-caption{max-width:calc(100% - 24px)}
+ body.spa-hub .card-top{grid-row:2;align-self:stretch}
+ body.spa-hub .card-intro{grid-row:3;align-self:start}
+ body.spa-hub .inclusions{grid-row:4;align-content:start}
+ body.spa-hub .room-picker{grid-row:5;align-self:start;min-width:0}
+ body.spa-hub .selected-room{grid-row:6;align-self:start}
+ body.spa-hub .card-bottom,body.spa-hub .wild-card .card-bottom,body.spa-hub .wide .card-bottom{grid-row:7 / span 2;display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:subgrid;row-gap:0;margin-top:0}
+ body.spa-hub .catalog-price{grid-row:1}
+ body.spa-hub .catalog-card-actions{grid-row:2}
+}
+@media(min-width:601px) and (max-width:900px){
+ body.spa-hub .spa-card:nth-child(n+3){margin-top:40px}
+ body.spa-hub .card-top,body.spa-hub .wild-card .card-top,body.spa-hub .wide .card-top{display:flex;flex-direction:column;align-items:flex-start;gap:6px}
+ body.spa-hub .card-top h3{margin-bottom:auto}
+ body.spa-hub .capacity{margin-top:0}
+}
