@@ -57,15 +57,20 @@
     const facilities = isTea ? 'Душ і санвузол в окремому будиночку поруч' : 'Душ і санвузол у приміщенні лаунжу';
     card.querySelectorAll('[data-room]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.room === room)));
     if (announce) card.querySelector('.selected-room p').setAttribute('aria-live', 'polite');
-    card.querySelector('[data-price]').textContent = isTea ? '2 500' : '3 000';
+    const hourlyRate = isTea ? 2500 : 3000;
+    const formatRate = amount => amount.toLocaleString('uk-UA');
+    card.querySelector('[data-price]').textContent = formatRate(hourlyRate * 2);
+    card.querySelector('[data-hour-price]').textContent = formatRate(hourlyRate);
+    card.querySelector('[data-morning-price]').textContent = formatRate(hourlyRate * 1.4);
     card.querySelector('[data-room-name]').textContent = name;
     card.querySelector('[data-room-note]').textContent = isTea
-      ? 'Зручні лави. Душ і санвузол — в окремому будиночку поруч.'
-      : 'М’які меблі. Душ і санвузол — у приміщенні лаунжу.';
+      ? 'Зручні лави та місце для чаю.'
+      : 'М’які меблі та місце для чаю.';
     card.querySelector('[data-room-facilities]').textContent = facilities;
     card.querySelectorAll('[data-detail-link]').forEach(link => {
       link.href = roomRoutes[kind][room];
-      link.setAttribute('aria-label', `${kind === 'sauna' ? 'Дика парна' : 'Чан офуро'} ${isTea ? 'з чайним будиночком' : 'з лаунжем'}: детальніше`);
+      const title = `${kind === 'sauna' ? 'Дика парна' : 'Чан офуро'} ${isTea ? 'з чайним будиночком' : 'з лаунжем'}`;
+      link.setAttribute('aria-label', link.classList.contains('card-detail') ? `Подивитися простір: ${title}` : title);
     });
     card.querySelectorAll('[data-room-gallery]').forEach(button => {
       button.dataset.gallery = gallery;
