@@ -110,10 +110,8 @@ body.spa-hub .faq-section{padding-block:60px}
 body.spa-hub .morning-banner{display:flex;justify-content:space-between;align-items:center;gap:30px;padding-block:22px;border-bottom:1px solid var(--line)}
 body.spa-hub .morning-banner strong{font-size:18px;font-weight:500;white-space:nowrap}
 body.spa-hub .morning-banner p{font-size:15px;line-height:1.55;color:var(--muted);max-width:620px}
-body.spa-hub .catalog-price-label{font-size:14px;color:var(--muted);margin-bottom:7px}
 body.spa-hub .price{font-size:15px}
 body.spa-hub .price>strong{font-family:var(--sans);font-weight:500;font-size:32px;letter-spacing:-.035em;font-variant-numeric:tabular-nums}
-body.spa-hub .price small{font-size:14px;margin-top:6px}
 body.spa-hub .catalog-morning{margin-top:15px;padding:12px 14px;background:#e9ede3;border-left:2px solid #77866d}
 body.spa-hub .catalog-morning p{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 12px;font-size:15px}
 body.spa-hub .catalog-morning strong{font-weight:500;font-variant-numeric:tabular-nums}

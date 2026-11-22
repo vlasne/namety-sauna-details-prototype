@@ -60,7 +60,6 @@
     const hourlyRate = isTea ? 2500 : 3000;
     const formatRate = amount => amount.toLocaleString('uk-UA');
     card.querySelector('[data-price]').textContent = formatRate(hourlyRate * 2);
-    card.querySelector('[data-hour-price]').textContent = formatRate(hourlyRate);
     card.querySelector('[data-morning-price]').textContent = formatRate(hourlyRate * 1.4);
     card.querySelector('[data-room-name]').textContent = name;
     card.querySelector('[data-room-note]').textContent = isTea
